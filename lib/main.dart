@@ -7,6 +7,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var questions = ['Qual a sua cor favorita?', 'Qual o seu animal favorito?'];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
