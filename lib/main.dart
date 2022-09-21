@@ -8,26 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  void awserQuestion() {
-    print('Resposta escolhida!');
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+      home: Scaffold(
         appBar: AppBar(
           title: Text(
             'Questionário',
@@ -45,26 +26,34 @@ class _MyHomePageState extends State<MyHomePage> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
-                  onPressed: awserQuestion,
+                  onPressed: () {
+                    print('Resposta 1 escolhida!');
+                  },
                   child: Text('Resposta 1'),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
-                  onPressed: awserQuestion,
+                  onPressed: () {
+                    print('Resposta 2 escolhida!');
+                  },
                   child: Text('Resposta 2'),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
-                  onPressed: awserQuestion,
+                  onPressed: () {
+                    print('Resposta 3 escolhida!');
+                  },
                   child: Text('Resposta 3'),
                 ),
               ),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
