@@ -21,11 +21,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  void awserQuestion() {
+    print('Resposta escolhida!');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Questionário'),
+          title: Text(
+            'Questionário',
+          ),
         ),
         body: Center(
           child: Column(
@@ -33,26 +39,27 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text('Essa é uma pergunta?'),
+                child: Text('Essa é uma pergunta?',
+                    style: TextStyle(fontSize: 24)),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: awserQuestion,
                   child: Text('Resposta 1'),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: awserQuestion,
                   child: Text('Resposta 2'),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: awserQuestion,
                   child: Text('Resposta 3'),
                 ),
               ),
