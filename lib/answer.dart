@@ -8,12 +8,15 @@ class Answer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.blueAccent),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(Colors.blueAccent),
+        ),
+        onPressed: selectHandler,
+        child: Text(answerText),
       ),
-      onPressed: selectHandler,
-      child: Text(answerText),
     );
   }
 }

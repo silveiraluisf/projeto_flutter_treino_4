@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_flutter_treino_4/answer.dart';
-import 'package:projeto_flutter_treino_4/question.dart';
+import 'package:projeto_flutter_treino_4/quiz.dart';
+import 'package:projeto_flutter_treino_4/result.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,6 +10,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final _questions = const [
+    {
+      'questionText': 'Qual a sua cor favorita?',
+      'answers': ['Azul', 'Vermelho', 'Verde', 'Amarelo'],
+    },
+    {
+      'questionText': 'Qual o seu animal favorito?',
+      'answers': ['Tigre', 'Capivara', 'Unicórnio', 'Passarinho'],
+    },
+    {
+      'questionText': 'Qual o seu carro favorito?',
+      'answers': ['Uno', 'Gol', 'Ipanema', 'Escort'],
+    }
+  ];
+
   var _questionIndex = 0;
 
   void _answerQuestion() {
@@ -21,20 +36,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      {
-        'questionText': 'Qual a sua cor favorita?',
-        'answers': ['Azul', 'Vermelho', 'Verde', 'Amarelo'],
-      },
-      {
-        'questionText': 'Qual o seu animal favorito?',
-        'answers': ['Tigre', 'Capivara', 'Unicórnio', 'Passarinho'],
-      },
-      {
-        'questionText': 'Qual o seu carro favorito?',
-        'answers': ['Uno', 'Gol', 'Ipanema', 'Escort'],
-      }
-    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -43,21 +44,13 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         body: Center(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Question(
-                  questions[_questionIndex]['questionText'],
-                ),
-              ),
-              ...(questions[_questionIndex]['answers'] as List<String>)
-                  .map((answer) {
-                return Answer(_answerQuestion, answer);
-              }).toList()
-            ],
-          ),
-        ),
+            child: _questionIndex < _questions.length
+                ? Quiz(
+                    answerQuestion: _answerQuestion,
+                    questionIndex: _questionIndex,
+                    questions: _questions,
+                  )
+                : Result()),
       ),
     );
   }
