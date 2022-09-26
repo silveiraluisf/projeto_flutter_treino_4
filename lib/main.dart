@@ -14,7 +14,7 @@ class _MyAppState extends State<MyApp> {
     {
       'questionText': 'Qual a sua cor favorita?',
       'answers': [
-        {'text': 'Azul', 'score': 5},
+        {'text': 'Azul', 'score': 2},
         {'text': 'Vermelho', 'score': 5},
         {'text': 'Verde', 'score': 7},
         {'text': 'Amarelo', 'score': 9},
@@ -23,9 +23,9 @@ class _MyAppState extends State<MyApp> {
     {
       'questionText': 'Qual o seu animal favorito?',
       'answers': [
-        {'text': 'Tigre', 'score': 3},
+        {'text': 'Tigre', 'score': 2},
         {'text': 'Capivara', 'score': 5},
-        {'text': 'Unicórnio', 'score': 8},
+        {'text': 'Unicórnio', 'score': 1},
         {'text': 'Passarinho', 'score': 4},
       ],
     },
@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         {'text': 'Uno', 'score': 3},
         {'text': 'Gol', 'score': 5},
         {'text': 'Ipanema', 'score': 8},
-        {'text': 'Escort', 'score': 4},
+        {'text': 'Escort', 'score': 1},
       ],
     }
   ];
