@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
       },
       {
         'questionText': 'Qual o seu animal favorito?',
-        'answers': ['Azul', 'Vermelho', 'Verde', 'Amarelo'],
+        'answers': ['Tigre', 'Capivara', 'Unicórnio', 'Passarinho'],
       },
       {
         'questionText': 'Qual o seu carro favorito?',
@@ -44,21 +44,17 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Question(questions[_questionIndex]['questionText']),
+                child: Question(
+                  questions[_questionIndex]['questionText'],
+                ),
               ),
-              Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Answer(_answerQuestion)),
-              Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Answer(_answerQuestion)),
-              Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Answer(_answerQuestion)),
+              ...(questions[_questionIndex]['answers'] as List<String>)
+                  .map((answer) {
+                return Answer(_answerQuestion, answer);
+              }).toList()
             ],
           ),
         ),
